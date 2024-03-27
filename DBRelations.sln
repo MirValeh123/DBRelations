@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backing_Fields", "Backing_F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadow_Property", "Shadow_Property\Shadow_Property.csproj", "{BA260C90-A510-4981-803D-FB13F7F7E12A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_Configurations1", "EF_Core_Configurations1\EF_Core_Configurations1.csproj", "{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BA260C90-A510-4981-803D-FB13F7F7E12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA260C90-A510-4981-803D-FB13F7F7E12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA260C90-A510-4981-803D-FB13F7F7E12A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
