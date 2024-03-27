@@ -41,7 +41,7 @@ class ESirketDbContext:DbContext
     public DbSet<CalisanAdresi> CalisanAdresleri { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=MIRVALEH;Database=ESirket;Trusted_Connection=True;TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Server=KOMPUTER;Database=ESirket;Trusted_Connection=True;TrustServerCertificate=true");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -5,15 +5,24 @@ BackingFieldsDbContext context = new BackingFieldsDbContext();
 
 var person = await context.Persons.FindAsync(3);
 
+//Person person1 = new()
+//{
+//    Name = "MirValeh",
+//    Department = "Dp1"
+//};
 //Person person2 = new()
 //{
-//    Name = "Fateh",
+//    Name = "MirTaleh",
+//    Department = "Dp2"
+//};
+//Person person3 = new()
+//{
+//    Name = "MirSaleh",
 //    Department = "Dp3"
-
 //};
 
-//context.Persons.Add(person2);
-//context.SaveChanges();
+//await context.Persons.AddRangeAsync(person1,person2,person3);
+//await context.SaveChangesAsync();
 
 Console.Read();
 
@@ -25,8 +34,8 @@ Console.Read();
 //    public string name;
 
 //    [BackingField(nameof(name))]
-//    //public string Name { get => name.Substring(0, 3); set => name = value; }
-//    public string Name { get; set; }
+//    public string Name { get => name.Substring(0, 3); set => name = value; }
+//    //public string Name { get; set; }
 
 //    public string Department { get; set; }
 //}
@@ -66,7 +75,7 @@ class BackingFieldsDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=MIRVALEH;Database=BackingFieldsDB;Trusted_Connection=True;TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Server=KOMPUTER;Database=BackingFieldsDB;Trusted_Connection=True;TrustServerCertificate=true");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -76,6 +85,7 @@ class BackingFieldsDbContext : DbContext
         //    .HasField(nameof(Person.name))
         #region Field And Property Access
         //.UsePropertyAccessMode(PropertyAccessMode.Property);
+        //.UsePropertyAccessMode(PropertyAccessMode.Field);
         #endregion
 
         #region Field-Only Properties

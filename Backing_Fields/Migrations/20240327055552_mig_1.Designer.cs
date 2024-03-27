@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backing_Fields.Migrations
 {
     [DbContext(typeof(BackingFieldsDbContext))]
-    [Migration("20240325210154_mig_1")]
+    [Migration("20240327055552_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />

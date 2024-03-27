@@ -108,7 +108,7 @@ class EJurnalDbContext : DbContext
     public DbSet<KitapYazar> KitapYazar { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=MIRVALEH;Database=EKitap;Trusted_Connection=True;TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Server=KOMPUTER;Database=EKitap;Trusted_Connection=True;TrustServerCertificate=true");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
