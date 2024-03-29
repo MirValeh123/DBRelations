@@ -1,7 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 ApplicatonDbContext context = new ApplicatonDbContext();
+
+//Person p = new Person();
+//p.School = new()
+//{
+//    Name = "229"
+//};
+//p.Age = 14;
+//p.Name = "Eli";
+//p.FirstName = string.Empty;
+//p.LastName = string.Empty;
+//await context.Peoples.AddAsync(p);
+//await context.SaveChangesAsync();  
+var person = context.Peoples.First();
+person.Name = "Valeh";
+context.SaveChanges();
+Console.WriteLine();
 
 
 #region Configuration | Data Annotations , Fluent API
@@ -11,14 +28,24 @@ class Person
 {
     public int Id { get; set; }
 
+    //[Key]
+    //public int PID { get; set; }
+
     //[ForeignKey(nameof(School))]
     public int TestSchoolId { get; set; }
+
     //[Column("Adi", TypeName = "Metin",Order =3)]
     public string Name { get; set; } = string.Empty;
     public string FirstName { get; set; }
     = string.Empty;
+
+    //[NotMapped]
     public string LastName { get; set; } = string.Empty;
     public int Age { get; set; }
+
+    //[Timestamp]
+    public byte[] RowVersion { get; set; }
+    public School School { get; set; }
 
 }
 
@@ -39,13 +66,22 @@ class ApplicatonDbContext : DbContext
     public DbSet<School> Schools { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=MIRVALEH;Database=EDepartman;Trusted_Connection=True;TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Server=KOMPUTER;Database=EOkul;Trusted_Connection=True;TrustServerCertificate=true");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //modelBuilder.Entity<Person>().ToTable("Kisiler");
         //modelBuilder.Entity<Person>().Property(p => p.Name).HasColumnName("Adi").HasColumnType("Metin").HasColumnOrder(3);
-        modelBuilder.Entity<School>().HasOne(p => p.Persons).WithMany(x=>x.)
+        //modelBuilder.Entity<Person>()
+        //    .HasOne(p => p.School)
+        //    .WithMany(x => x.Persons)
+        //    .HasForeignKey(x => x.TestSchoolId);
+
+        //modelBuilder.Entity<Person>().Ignore(x => x.LastName);
+
+        //modelBuilder.Entity<Person>().HasKey(p=>p.PID);
+
+        //modelBuilder.Entity<Person>().Property(p => p.RowVersion).IsRowVersion();
     }
 }
