@@ -28,6 +28,7 @@ class Person
 {
     public int Id { get; set; }
 
+    public int Id2 { get; set; }
     //[Key]
     //public int PID { get; set; }
 
@@ -41,6 +42,8 @@ class Person
 
     //[NotMapped]
     public string LastName { get; set; } = string.Empty;
+
+    //[Required]
     public int Age { get; set; }
 
     //[Timestamp]
@@ -52,6 +55,8 @@ class Person
 class School
 {
     public int Id { get; set; }
+
+    //[MaxLength(20)]
     public string Name { get; set; } = string.Empty;
     public ICollection<Person> Persons { get; set; }
 
@@ -83,5 +88,12 @@ class ApplicatonDbContext : DbContext
         //modelBuilder.Entity<Person>().HasKey(p=>p.PID);
 
         //modelBuilder.Entity<Person>().Property(p => p.RowVersion).IsRowVersion();
+        //modelBuilder.Entity<Person>().Property(p=>p.Age).IsRequired();
+
+        //modelBuilder.Entity<School>().Property(s => s.Name).HasMaxLength(20);
+
+        //modelBuilder.Entity<Person>().HasKey(p => new {p.Id,p.Id2 });
+
+         
     }
 }

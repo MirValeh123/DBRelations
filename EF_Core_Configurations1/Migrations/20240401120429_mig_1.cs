@@ -27,19 +27,19 @@ namespace EF_Core_Configurations1.Migrations
                 name: "Peoples",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id2 = table.Column<int>(type: "int", nullable: false),
                     TestSchoolId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false),
+                    RowVersion = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     SchoolId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Peoples", x => x.Id);
+                    table.PrimaryKey("PK_Peoples", x => new { x.Id, x.Id2 });
                     table.ForeignKey(
                         name: "FK_Peoples_Schools_SchoolId",
                         column: x => x.SchoolId,

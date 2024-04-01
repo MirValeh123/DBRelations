@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Configurations1.Migrations
 {
     [DbContext(typeof(ApplicatonDbContext))]
-    [Migration("20240329080602_mig_1")]
+    [Migration("20240401120429_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -26,10 +26,10 @@ namespace EF_Core_Configurations1.Migrations
             modelBuilder.Entity("Person", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int>("Id2")
+                        .HasColumnType("int");
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -47,10 +47,8 @@ namespace EF_Core_Configurations1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
                         .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("SchoolId")
                         .HasColumnType("int");
@@ -58,7 +56,7 @@ namespace EF_Core_Configurations1.Migrations
                     b.Property<int>("TestSchoolId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id", "Id2");
 
                     b.HasIndex("SchoolId");
 
