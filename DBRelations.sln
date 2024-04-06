@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Many_to_Many_Relationship",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backing_Fields", "Backing_Fields\Backing_Fields.csproj", "{1A771EC1-115B-4D93-9408-27BE90AFD8CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadow_Property", "Shadow_Property\Shadow_Property.csproj", "{BA260C90-A510-4981-803D-FB13F7F7E12A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shadow_Property", "Shadow_Property\Shadow_Property.csproj", "{BA260C90-A510-4981-803D-FB13F7F7E12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Core_Configurations1", "EF_Core_Configurations1\EF_Core_Configurations1.csproj", "{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_Core_Configurations1", "EF_Core_Configurations1\EF_Core_Configurations1.csproj", "{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratedValues", "GeneratedValues\GeneratedValues.csproj", "{3CA3A58E-9739-48D1-A872-FD6FEB395071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seperate_Configuration_Classes", "Seperate_Configuration_Classes\Seperate_Configuration_Classes.csproj", "{EB49286A-72E0-4B59-9E86-A340FC7B114E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E211FF85-FD9B-4A9E-AFD6-8AD630FB42D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA3A58E-9739-48D1-A872-FD6FEB395071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA3A58E-9739-48D1-A872-FD6FEB395071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA3A58E-9739-48D1-A872-FD6FEB395071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA3A58E-9739-48D1-A872-FD6FEB395071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB49286A-72E0-4B59-9E86-A340FC7B114E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB49286A-72E0-4B59-9E86-A340FC7B114E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB49286A-72E0-4B59-9E86-A340FC7B114E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB49286A-72E0-4B59-9E86-A340FC7B114E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

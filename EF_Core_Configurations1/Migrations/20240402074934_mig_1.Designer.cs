@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Configurations1.Migrations
 {
     [DbContext(typeof(ApplicatonDbContext))]
-    [Migration("20240401120429_mig_1")]
+    [Migration("20240402074934_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -26,10 +26,10 @@ namespace EF_Core_Configurations1.Migrations
             modelBuilder.Entity("Person", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Id2")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -56,7 +56,7 @@ namespace EF_Core_Configurations1.Migrations
                     b.Property<int>("TestSchoolId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id", "Id2");
+                    b.HasKey("Id");
 
                     b.HasIndex("SchoolId");
 
@@ -78,6 +78,30 @@ namespace EF_Core_Configurations1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Schools");
+                });
+
+            modelBuilder.Entity("Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Num1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Num2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Result")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("int")
+                        .HasComputedColumnSql("[Num1] + [Num2]");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tests");
                 });
 
             modelBuilder.Entity("Person", b =>

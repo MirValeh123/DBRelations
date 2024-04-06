@@ -28,7 +28,7 @@ class Person
 {
     public int Id { get; set; }
 
-    public int Id2 { get; set; }
+    //public int Id2 { get; set; }
     //[Key]
     //public int PID { get; set; }
 
@@ -61,6 +61,16 @@ class School
     public ICollection<Person> Persons { get; set; }
 
 }
+
+
+class Test
+{
+    //public int Id { get; set; }
+    public int Num1 { get; set; }
+    public int Num2 { get; set; }
+
+    public int Result { get; set; }
+}
 #endregion
 
 
@@ -69,6 +79,8 @@ class ApplicatonDbContext : DbContext
 {
     public DbSet<Person> Peoples { get; set; }
     public DbSet<School> Schools { get; set; }
+
+    public DbSet<Test> Tests { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=KOMPUTER;Database=EOkul;Trusted_Connection=True;TrustServerCertificate=true");
@@ -94,6 +106,8 @@ class ApplicatonDbContext : DbContext
 
         //modelBuilder.Entity<Person>().HasKey(p => new {p.Id,p.Id2 });
 
+        modelBuilder.Entity<Test>().HasNoKey();
+        modelBuilder.Entity<Test>().Property(t => t.Result).HasComputedColumnSql("[Num1] + [Num2]");
          
     }
 }

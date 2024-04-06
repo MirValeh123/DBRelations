@@ -24,11 +24,26 @@ namespace EF_Core_Configurations1.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tests",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Num1 = table.Column<int>(type: "int", nullable: false),
+                    Num2 = table.Column<int>(type: "int", nullable: false),
+                    Result = table.Column<int>(type: "int", nullable: false, computedColumnSql: "[Num1] + [Num2]")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tests", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Peoples",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    Id2 = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     TestSchoolId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -39,7 +54,7 @@ namespace EF_Core_Configurations1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Peoples", x => new { x.Id, x.Id2 });
+                    table.PrimaryKey("PK_Peoples", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Peoples_Schools_SchoolId",
                         column: x => x.SchoolId,
@@ -59,6 +74,9 @@ namespace EF_Core_Configurations1.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Peoples");
+
+            migrationBuilder.DropTable(
+                name: "Tests");
 
             migrationBuilder.DropTable(
                 name: "Schools");
