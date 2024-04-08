@@ -24,4 +24,6 @@ class ApplicationDbContext:DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-} 
+}
+
+class OrderConfiguration:IEntityTypeConfiguration<Order>
