@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indexes", "Indexes\Indexes.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequences", "Sequences\Sequences.csproj", "{D31DE167-1E93-47A6-99B1-E29A1729A18E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loading_Related_Data", "Loading_Related_Data\Loading_Related_Data.csproj", "{D43DEA30-4618-4806-9BB0-E5706EC23719}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{D31DE167-1E93-47A6-99B1-E29A1729A18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31DE167-1E93-47A6-99B1-E29A1729A18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31DE167-1E93-47A6-99B1-E29A1729A18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D43DEA30-4618-4806-9BB0-E5706EC23719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D43DEA30-4618-4806-9BB0-E5706EC23719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D43DEA30-4618-4806-9BB0-E5706EC23719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D43DEA30-4618-4806-9BB0-E5706EC23719}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
