@@ -4,51 +4,35 @@ using System.Reflection;
 
 AppDbContext context = new AppDbContext();
 
+//var employee = await context.Employees.FirstOrDefaultAsync(e=>e.Id==2);
 
-#region Eager Loading
+//if (employee.Name == "Gençay" )
+//{
+//    var orders = await context.Orders.Where(o => o.EmployeeId == employee.Id).ToListAsync();
 
-#region Include
+//}
 
-//var employees = await context.Employees.Include("Orders").ToListAsync();
+#region Reference
 
-//var employees = await context.Employees
-//    .Include(e => e.Orders)
-//    .Include(e=>e.Region).ToListAsync();
-
-
-//Console.WriteLine();
-#endregion
-
-#region ThenInclude
-
-//var orders = context.Orders.Include(o => o.Employee.Region).ToList();
-
-
-//var orders = context.Orders.Include(o=>o.Employee).Include(o=>o.Region).ToList();
-
-//var regions = context.Regions.Include(r=>r.Employees).ThenInclude(r=>r.Orders).ToList();
+//var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
+////...
+////.....
+//await context.Entry(employee).Reference(e=>e.Region).LoadAsync();
 
 //Console.WriteLine();
-
 #endregion
 
+#region Collection
 
-#region Cooook kritiiiiik!!!!!!
-
-//EF Core,evvelden execute edilmis sorgularin datalarini sonraki sorgulardan istifade edir!
-
-//var employees = context.Employees.ToList();
-
-//var orders = context.Orders.ToList();
+//var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
+////..........
+////..........
+////.......
+//await context.Entry(employee).Collection(e => e.Orders).LoadAsync();
 
 //Console.WriteLine();
+ 
 
-
-#endregion
-
-#region AutoInclude
-
-#endregion
 
 #endregion
 public class Person
@@ -84,7 +68,7 @@ public class Order
 
 
 
-class AppDbContext :DbContext
+class AppDbContext : DbContext
 {
     public DbSet<Person> Persons { get; set; }
     public DbSet<Employee> Employees { get; set; }
@@ -93,14 +77,14 @@ class AppDbContext :DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=KOMPUTER ;Database=LoadingRelatedDate;Trusted_Connection=True;TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Server=KOMPUTER ;Database=ExplicitLoading;Trusted_Connection=True;TrustServerCertificate=true");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        modelBuilder.Entity<Employee>().Navigation(e => e.Region).AutoInclude(); 
-       
+        //modelBuilder.Entity<Employee>().Navigation(e => e.Region).AutoInclude();
+
 
     }
 
