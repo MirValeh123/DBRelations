@@ -4,55 +4,9 @@ using System.Reflection;
 
 AppDbContext context = new AppDbContext();
 
-//var employee = await context.Employees.FirstOrDefaultAsync(e=>e.Id==2);
+#region Lazy Loading 
 
-//if (employee.Name == "Gençay" )
-//{
-//    var orders = await context.Orders.Where(o => o.EmployeeId == employee.Id).ToListAsync();
-
-//}
-
-#region Reference
-
-//var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
-////...
-////.....
-//await context.Entry(employee).Reference(e=>e.Region).LoadAsync();
-
-//Console.WriteLine();
-#endregion
-
-#region Collection
-
-//var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
-////..........
-////..........
-////.......
-//await context.Entry(employee).Collection(e => e.Orders).LoadAsync();
-
-//Console.WriteLine();
-
-#region Aggregate
-
-//var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
-////..........
-////..........
-////.......
-//var count = await context.Entry(employee).Collection(e => e.Orders).Query().CountAsync();
-
-//Console.WriteLine();
-#endregion
-
-#region Filter
-
-var employee = await context.Employees.FirstOrDefaultAsync(e => e.Id == 2);
-//..........
-//..........
-//.......
-await context.Entry(employee).Collection(e => e.Orders).Query().Where(o => o.OrderDate.Day == DateTime.Now.Day).ToListAsync() ;
-
-Console.WriteLine();
-#endregion
+var employee = await context.Employees.FindAsync(1);
 
 #endregion
 public class Person
