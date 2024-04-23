@@ -3,16 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Explicit_Loading.Migrations
+namespace Lazy_Loading.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240423115700_initial_mig")]
+    partial class initial_mig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,67 +49,67 @@ namespace Explicit_Loading.Migrations
                         {
                             Id = 1,
                             EmployeeId = 1,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2221)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2872)
                         },
                         new
                         {
                             Id = 2,
                             EmployeeId = 1,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2230)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2883)
                         },
                         new
                         {
                             Id = 3,
                             EmployeeId = 2,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2231)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2884)
                         },
                         new
                         {
                             Id = 4,
                             EmployeeId = 2,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2232)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2885)
                         },
                         new
                         {
                             Id = 5,
                             EmployeeId = 3,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2232)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2887)
                         },
                         new
                         {
                             Id = 6,
                             EmployeeId = 3,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2233)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2888)
                         },
                         new
                         {
                             Id = 7,
                             EmployeeId = 3,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2234)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2888)
                         },
                         new
                         {
                             Id = 8,
                             EmployeeId = 4,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2235)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2893)
                         },
                         new
                         {
                             Id = 9,
                             EmployeeId = 4,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2236)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2894)
                         },
                         new
                         {
                             Id = 10,
                             EmployeeId = 1,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2236)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2895)
                         },
                         new
                         {
                             Id = 11,
                             EmployeeId = 2,
-                            OrderDate = new DateTime(2024, 4, 23, 15, 56, 39, 604, DateTimeKind.Local).AddTicks(2237)
+                            OrderDate = new DateTime(2024, 4, 23, 15, 57, 0, 10, DateTimeKind.Local).AddTicks(2895)
                         });
                 });
 
