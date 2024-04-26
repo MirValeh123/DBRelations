@@ -13,64 +13,112 @@ Console.WriteLine();
 
 
 #region ILazyLoading
-
-#endregion
-#endregion
 public class Person
 {
     public int Id { get; set; }
 
 }
+//public class Employee : Person
+//{
+//    public int RegionId { get; set; }
+//    public string? Name { get; set; }
+//    public string? Surname { get; set; }
+//    public int Salary { get; set; }
+//    public virtual List<Order> Orders { get; set; }
+//    public virtual Region Region { get; set; }
+//}
+//public class Region
+//{
+//    public int Id { get; set; }
+//    public string Name { get; set; }
+//    public virtual ICollection<Employee> Employees { get; set; }
+//}
+//public class Order
+//{
+//    public int Id { get; set; }
+//    public int EmployeeId { get; set; }
+//    public DateTime OrderDate { get; set; }
+//    public virtual Employee Employee { get; set; }
+//}
+#endregion
+#endregion
+
+#region Delegate ile LazyLoading
+
 public class Employee : Person
 {
-    ILazyLoader _lazyLoader;
-    Region _region;
-    public Employee()
-    {
-        
-    }
-    public Employee(ILazyLoader lazyLoader)
-    {
-        _lazyLoader = lazyLoader;
-    }
-    //public int Id { get; set; }
     public int RegionId { get; set; }
     public string? Name { get; set; }
     public string? Surname { get; set; }
     public int Salary { get; set; }
-
     public virtual List<Order> Orders { get; set; }
-    public virtual Region Region
-    {
-        get => _lazyLoader.Load(this, ref _region);
-        set => _region = value;
-    }
+    public virtual Region Region { get; set; }
 }
 public class Region
 {
-    ILazyLoader _lazyLoader;
-    ICollection<Employee> _employee;
-    public Region()
-    {
-        
-    }
-
-    public Region(ILazyLoader lazyLoader)
-    {
-        _lazyLoader = lazyLoader;
-    }
     public int Id { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<Employee> Employees { get=>_lazyLoader.Load(this,ref _employee); set=>_employee = value; }
+    public virtual ICollection<Employee> Employees { get; set; }
 }
 public class Order
 {
     public int Id { get; set; }
     public int EmployeeId { get; set; }
     public DateTime OrderDate { get; set; }
-
     public virtual Employee Employee { get; set; }
 }
+#endregion
+
+//public class Employee : Person
+//{
+//    ILazyLoader _lazyLoader;
+//    Region _region;
+//    public Employee()
+//    {
+
+//    }
+//    public Employee(ILazyLoader lazyLoader)
+//    {
+//        _lazyLoader = lazyLoader;
+//    }
+//    //public int Id { get; set; }
+//    public int RegionId { get; set; }
+//    public string? Name { get; set; }
+//    public string? Surname { get; set; }
+//    public int Salary { get; set; }
+
+//    public virtual List<Order> Orders { get; set; }
+//    public virtual Region Region
+//    {
+//        get => _lazyLoader.Load(this, ref _region);
+//        set => _region = value;
+//    }
+//}
+//public class Region
+//{
+//    ILazyLoader _lazyLoader;
+//    ICollection<Employee> _employee;
+//    public Region()
+//    {
+
+//    }
+
+//    public Region(ILazyLoader lazyLoader)
+//    {
+//        _lazyLoader = lazyLoader;
+//    }
+//    public int Id { get; set; }
+//    public string Name { get; set; }
+//    public virtual ICollection<Employee> Employees { get=>_lazyLoader.Load(this,ref _employee); set=>_employee = value; }
+//}
+//public class Order
+//{
+//    public int Id { get; set; }
+//    public int EmployeeId { get; set; }
+//    public DateTime OrderDate { get; set; }
+
+//    public virtual Employee Employee { get; set; }
+//}
 
 
 
