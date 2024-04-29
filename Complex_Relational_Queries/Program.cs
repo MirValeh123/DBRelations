@@ -183,7 +183,25 @@ ApplicationDbContext context = new ApplicationDbContext();
 //var datas = await fullJoin.ToListAsync();
 
 //Console.WriteLine();
+
+
 #endregion
+
+#region Cross Join
+
+//var query = from order in context.Orders
+//            from person in context.Persons
+//            select new
+//            {
+//                order,
+//                person
+//            };
+
+//var data = await query.ToListAsync();
+//Console.WriteLine(data);
+
+#endregion
+
 public class Photo
 {
     public int PersonId { get; set; }
